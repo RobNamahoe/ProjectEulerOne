@@ -4,13 +4,22 @@
 public class ProjectEulerOne {
 
   public static void main(String[] args) {
-   int sum = 0;
+    int sum = getSum();
+    System.out.println("sum: " + sum);
+  }
+
+  public static int getSum() {
+    int sum = 0;
     for (int i = 0; i < 1000; i++) {
-      if ( (i % 3 == 0) || (i % 5 == 0) ) {
+      if (isDivisibleByThreeOrFive(i)) {
         sum+=i;
       }
-    } 
-    System.out.println("sum: " + sum);
+    }
+    return sum;
+  }
+
+  public static boolean isDivisibleByThreeOrFive(int i) {
+    return ((i % 3 == 0) || (i % 5 == 0));
   }
 
 }
